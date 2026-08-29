@@ -1,12 +1,14 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.publish.PublishingExtension
+import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.plugins.signing.SigningExtension
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+
     `maven-publish`
     signing
 }
@@ -57,27 +59,17 @@ android {
         }
     }
 
-    /*
-     * ============================================
-     * MAVEN PUBLICATION
-     * ============================================
-     *
-     * Publish only the release AAR.
-     * Also generate sources.jar.
-     */
     publishing {
         singleVariant("release") {
             withSourcesJar()
             withJavadocJar()
         }
     }
-
 }
 
 dependencies {
-    /*
-     * Hilt
-     */
+
+    // Hilt
     implementation(
         libs.hilt.android
     )
@@ -90,9 +82,7 @@ dependencies {
         libs.androidx.hilt.navigation.compose
     )
 
-    /*
-     * CameraX
-     */
+    // CameraX
     implementation(
         libs.androidx.camera.core
     )
@@ -109,9 +99,7 @@ dependencies {
         libs.androidx.camera.view
     )
 
-    /*
-     * Android
-     */
+    // Android
     implementation(
         libs.androidx.core.ktx
     )
@@ -120,16 +108,12 @@ dependencies {
         libs.androidx.appcompat
     )
 
-    /*
-     * ML Kit
-     */
+    // ML Kit
     implementation(
         libs.play.services.mlkit.text.recognition
     )
 
-    /*
-     * Coroutines
-     */
+    // Coroutines
     implementation(
         libs.kotlinx.coroutines.android
     )
@@ -138,9 +122,7 @@ dependencies {
         libs.kotlinx.coroutines.play.services
     )
 
-    /*
-     * Compose
-     */
+    // Compose
     implementation(
         libs.androidx.compose.material.icons.extended
     )
@@ -167,9 +149,7 @@ dependencies {
         libs.androidx.compose.material3
     )
 
-    /*
-     * Lifecycle
-     */
+    // Lifecycle
     implementation(
         libs.androidx.lifecycle.runtime.ktx
     )
@@ -178,23 +158,6 @@ dependencies {
         libs.androidx.lifecycle.viewmodel.compose
     )
 }
-
-/*
- * ================================================
- * MAVEN PUBLISHING
- * ================================================
- *
- * This currently publishes to a LOCAL Maven folder
- * for testing.
- *
- * Generated dependency:
- *
- * com.cardscanner:card-scanner:1.0.0
- *
- * We will change groupId later when publishing to
- * Maven Central using your verified namespace.
- * ================================================
- */
 
 afterEvaluate {
 
@@ -265,7 +228,7 @@ afterEvaluate {
 
                     scm {
                         connection.set(
-                            "scm:git:git://github.com/mohamedebrahem13/CardScanner.git"
+                            "scm:git:https://github.com/mohamedebrahem13/CardScanner.git"
                         )
 
                         developerConnection.set(
@@ -280,11 +243,11 @@ afterEvaluate {
             }
         }
 
+        /*
+         * Keep local Maven repo for testing.
+         */
         repositories {
 
-            /*
-             * Keep this only for testing.
-             */
             maven {
                 name =
                     "localTest"
@@ -301,6 +264,9 @@ afterEvaluate {
         }
     }
 
+    /*
+     * Sign the Maven publication with GPG.
+     */
     val publishingExtension =
         extensions.getByType(
             PublishingExtension::class.java
@@ -313,11 +279,14 @@ afterEvaluate {
                 "release"
             )
 
-    extensions
-        .getByType(
+    val signingExtension =
+        extensions.getByType(
             SigningExtension::class.java
         )
-        .sign(
-            releasePublication
-        )
+
+    signingExtension.useGpgCmd()
+
+    signingExtension.sign(
+        releasePublication
+    )
 }
