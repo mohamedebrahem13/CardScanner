@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="card_scanner_title">
+        Scan Card
+    </string>
+
+    <string name="card_scanner_instruction">
+        Make sure the card number and expiry date are clearly visible.
+    </string>
+
+    <string name="card_scanner_place_card">
+        Place your card inside the frame
+    </string>
+
+    <string name="card_scanner_turn_flashlight_on">
+        Turn flashlight on
+    </string>
+
+    <string name="card_scanner_turn_flashlight_off">
+        Turn flashlight off
+    </string>
+
+    <string name="card_scanner_close">
+        Close card scanner
+    </string>
+
+</resources>

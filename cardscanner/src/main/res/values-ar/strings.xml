@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="card_scanner_title">
+        مسح البطاقة
+    </string>
+
+    <string name="card_scanner_instruction">
+        تأكد من ظهور رقم البطاقة وتاريخ انتهاء الصلاحية بوضوح.
+    </string>
+
+    <string name="card_scanner_place_card">
+        ضع بطاقتك داخل الإطار
+    </string>
+
+    <string name="card_scanner_turn_flashlight_on">
+        تشغيل المصباح
+    </string>
+
+    <string name="card_scanner_turn_flashlight_off">
+        إيقاف المصباح
+    </string>
+
+    <string name="card_scanner_close">
+        إغلاق ماسح البطاقة
+    </string>
+
+</resources>

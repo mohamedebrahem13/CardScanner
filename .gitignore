@@ -1,0 +1,103 @@
+# -----------------------------
+# Gradle
+# -----------------------------
+.gradle/
+build/
+**/build/
+
+# -----------------------------
+# Local Maven test repository
+# -----------------------------
+**/maven-repository/
+**/repo/
+
+# -----------------------------
+# Android Studio / IntelliJ
+# -----------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Keep selected project code style files if needed
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+
+# -----------------------------
+# Local SDK / machine config
+# -----------------------------
+local.properties
+
+# -----------------------------
+# Signing / secrets
+# -----------------------------
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+*.asc
+*.gpg
+
+gradle.properties
+
+# -----------------------------
+# Environment files
+# -----------------------------
+.env
+.env.*
+!.env.example
+
+# -----------------------------
+# Kotlin / Java
+# -----------------------------
+*.class
+out/
+
+# -----------------------------
+# Android generated files
+# -----------------------------
+captures/
+.externalNativeBuild/
+.cxx/
+
+# -----------------------------
+# APK / AAB / AAR outputs
+# -----------------------------
+*.apk
+*.ap_
+*.aab
+*.aar
+
+# -----------------------------
+# Native build outputs
+# -----------------------------
+obj/
+libs/
+
+# -----------------------------
+# Logs
+# -----------------------------
+*.log
+
+# -----------------------------
+# OS files
+# -----------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -----------------------------
+# VS Code
+# -----------------------------
+.vscode/
+
+# -----------------------------
+# Temporary files
+# -----------------------------
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
