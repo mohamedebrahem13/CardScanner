@@ -27,6 +27,8 @@ Card Scanner provides a configurable Android scanning experience built with Kotl
 
 ---
 
+<table style="width: 100%; border-collapse: collapse;"><tbody><tr><th style="width: 50%; text-align: center; border: 1px solid #ccc; padding: 8px;">Card Scanner</th><th style="width: 50%; text-align: center; border: 1px solid #ccc; padding: 8px;">Card Data after Scan </th></tr><tr><td style="width: 50%; text-align: center; border: 1px solid #ccc; padding: 8px;"><img alt="Image" height="2400" src="&lt;img width=">" alt="Card Scanner" style="max-width: 100%; height: auto;" /&gt;</td><td style="width: 50%; text-align: center; border: 1px solid #ccc; padding: 8px;"><img alt="Image" height="2400" src="&lt;img width=">" alt="Card Data after Scan " style="max-width: 100%; height: auto;" /&gt;</td></tr></tbody></table>
+
 ## Requirements
 
 | Requirement | Version |
